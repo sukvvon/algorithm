@@ -1,0 +1,36 @@
+## 2. We love Kriii
+
+> https://www.acmicpc.net/problem/10718
+
+```
+We love kriii
+
+문제
+ACM-ICPC 인터넷 예선, Regional, 그리고 World Finals까지 이미 2회씩 진출해버린 kriii는 미련을 버리지 못하고 왠지 모르게 올해에도 파주 World Finals 준비 캠프에 참여했다.
+
+대회를 뜰 줄 모르는 지박령 kriii를 위해서 격려의 문구를 출력해주자.
+
+입력
+본 문제는 입력이 없다.
+
+출력
+두 줄에 걸쳐 "강한친구 대한육군"을 한 줄에 한 번씩 출력한다.
+
+예제 입력 1
+
+예제 출력 1
+강한친구 대한육군
+강한친구 대한육군
+```
+
+### 해답
+
+```js
+for (let i = 0; i <= 1; i++) {
+  console.log("강한친구 대한육군");
+}
+```
+
+[console.log()](https://developer.mozilla.org/ko/docs/Web/API/console/log)의 개념을 알면 풀 수 있는 문제입니다.
+
+`console.log("강한친구 대한육군")`을 두 번 출력하여 문제를 해결할 수 있지만 [for문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for)을 활용하여 해결해보았습니다.
