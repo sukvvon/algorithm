@@ -50,16 +50,16 @@ const inputData = fs
 
 const count = inputData.length;
 
-let result = "";
+let sum = "";
 
 for (let i = 1; i < count; i++) {
   const data = inputData[i].split(" ").map((value) => +value);
 
   if (i < count - 1) {
-    result += `${data[0] + data[1]}\n`;
+    sum += `${data[0] + data[1]}\n`;
   } else if (i < count) {
-    result += `${data[0] + data[1]}`;
+    sum += `${data[0] + data[1]}`;
   }
 }
 
-console.log(result);
+console.log(sum);
