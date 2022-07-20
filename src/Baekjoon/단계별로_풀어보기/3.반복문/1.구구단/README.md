@@ -76,7 +76,7 @@ console.log(inputData); // <Buffer 32>
 ###### +
 
 ```js
-const inputData = fs.readFileSync(
+const inputData = +fs.readFileSync(
   process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt"
 );
 
@@ -121,4 +121,4 @@ for (let i = 1; i < 10; i++) {
 // 2 * 9 = 18
 ```
 
-[console.log()](https://developer.mozilla.org/ko/docs/Web/API/console/log)와 [Template literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)을 활용해 for문의 `i`값마다 `2 * 1 = 2`와 같은 형식으로 출력할 수 있도록 합니다.
+[`console.log()`](https://developer.mozilla.org/ko/docs/Web/API/console/log)와 [Template literals](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)을 활용해 for문의 `i`값마다 `2 * 1 = 2`와 같은 형식으로 출력할 수 있도록 합니다.
