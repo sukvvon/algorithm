@@ -228,7 +228,7 @@ for (let i = 0; i < n; i++) {
 
 `i`값을 `0`으로 선언하고 `0`부터 `9`인 `n`까지 [for](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for)문을 반복하게 합니다.
 
-##### a[i]가 x 보다 작은 경우
+##### a[i]가 x 보다 작은 경우 선별
 
 ```js
 if (a[i] < x) {
