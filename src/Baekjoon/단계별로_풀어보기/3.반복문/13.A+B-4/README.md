@@ -1,4 +1,4 @@
-## 12. A+B-4
+## 13. A+B-4
 
 > https://www.acmicpc.net/problem/10951
 
