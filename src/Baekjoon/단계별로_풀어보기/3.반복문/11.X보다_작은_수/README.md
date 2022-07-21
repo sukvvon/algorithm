@@ -67,7 +67,7 @@ const inputData = fs.readFileSync(
   process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt"
 );
 
-console.log(inputData); // <Buffer 31 30 20 35 0a 31 20 31 30 20 34 20 39 20 32 20 33 20 38 20 35 20 37 20 36 35>
+console.log(inputData); // <Buffer 31 30 20 35 0a 31 20 31 30 20 34 20 39 20 32 20 33 20 38 20 35 20 37 20 36>
 ```
 
 ###### readFileSync()
@@ -95,7 +95,7 @@ const inputData = fs
 
 console.log(inputData);
 // 10 5
-// 1 10 4 9 2 3 8 5 7 65
+// 1 10 4 9 2 3 8 5 7 6
 ```
 
 ###### toString()
@@ -112,7 +112,7 @@ const inputData = fs
   .toString()
   .split("\n");
 
-console.log(inputData); // [ '10 5', '1 10 4 9 2 3 8 5 7 65' ]
+console.log(inputData); // [ '10 5', '1 10 4 9 2 3 8 5 7 6' ]
 ```
 
 ###### split()
@@ -130,7 +130,7 @@ const nx = inputData[0].split(" ").map((value) => +value);
 ```js
 const nx = inputData[0].split(" ");
 
-console.log(nx); // [ 10, 5 ]
+console.log(nx); // [ '10', '5' ]
 ```
 
 ###### split()
@@ -181,8 +181,10 @@ const a = inputData[1].split(" ");
 
 console.log(a);
 // [
-//   1, 10, 4, 9,  2,
-//   3,  8, 5, 7, 65
+//   '1', '10', '4',
+//   '9', '2',  '3',
+//   '8', '5',  '7',
+//   '6'
 // ]
 ```
 
@@ -197,8 +199,8 @@ const a = inputData[1].split(" ").map((value) => +value);
 
 console.log(a);
 // [
-//   1, 10, 4, 9,  2,
-//   3,  8, 5, 7, 65
+//   1, 10, 4, 9, 2,
+//   3,  8, 5, 7, 6
 // ]
 ```
 
@@ -253,7 +255,7 @@ if (a[i] < x) {
 if (a[i] < x) {
   result += `${a[i]} `;
 }
-//expected output: 1 4 2 3
+// expected output: 1 4 2 3
 ```
 
 [더하기 할당](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Addition_assignment)을 활용해 if...else문을 통과한 수들을 `` result += `${a[i]} ` ``를 통해 `result`값에 할당하도록 합니다.
