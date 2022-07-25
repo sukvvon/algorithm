@@ -195,12 +195,12 @@ console.log(minimum2); // 7
 
 `Math.min()` 함수 내에 매개변수로 [전개 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)을 활용해 <u>배열 내 요소</u>를 `...data`로 넣습니다.
 
-##### 결과값 출력하기
+#### 결과값 출력하기
 
 ```js
 console.log(minimum, maximum); // 7 35
 ```
 
-###### console.log()
+##### console.log()
 
 [`console.log()`](https://developer.mozilla.org/ko/docs/Web/API/console/log) 메서드를 통해 `minimum`과 `maximum`을 출력합니다.
