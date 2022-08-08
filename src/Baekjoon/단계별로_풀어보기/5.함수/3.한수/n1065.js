@@ -48,9 +48,7 @@ const inputData = +fs.readFileSync(
 );
 
 function arithmeticalSequence(n) {
-  if (n < 10) {
-    return true;
-  } else if (n < 100) {
+  if (n < 100) {
     return true;
   } else if (n < 1000) {
     const number = n % 10;
