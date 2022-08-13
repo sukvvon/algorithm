@@ -1,4 +1,4 @@
-## 1. 아스키 코드
+## 2. 숫자의 합
 
 > https://www.acmicpc.net/problem/11720
 
