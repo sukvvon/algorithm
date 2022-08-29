@@ -60,7 +60,9 @@ dz=ak
 const fs = require("fs");
 
 const inputData = fs
-  .readFileSync(process.platform === "linux" ? "/dev/stdin" : "src/index.txt")
+  .readFileSync(
+    process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt"
+  )
   .toString()
   .trim();
 
