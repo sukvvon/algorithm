@@ -29,14 +29,14 @@ const values = inputData[1].split(" ").map((value) => +value);
 let count = 0;
 
 for (let i = 0; i < N; i++) {
-  if (primeNumber(values[i])) {
+  if (isPrimeNumber(values[i])) {
     count++;
   }
 }
 
 console.log(count);
 
-function primeNumber(value) {
+function isPrimeNumber(value) {
   if (value < 2) {
     return false;
   }
