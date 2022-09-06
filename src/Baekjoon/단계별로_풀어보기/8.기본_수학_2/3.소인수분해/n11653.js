@@ -49,7 +49,8 @@ N의 소인수분해 결과를 한 줄에 하나씩 오름차순으로 출력한
 
 const fs = require("fs");
 
-const filePath = process.platform === "linux" ? "/dev/stdin" : "src/index.txt";
+const filePath =
+  process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt";
 const inputData = +fs.readFileSync(filePath);
 
 let quotient = inputData;
