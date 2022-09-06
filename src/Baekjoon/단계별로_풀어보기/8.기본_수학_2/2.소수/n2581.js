@@ -34,7 +34,8 @@ M이상 N이하의 자연수 중 소수인 것을 모두 찾아 첫째 줄에 �
 
 const fs = require("fs");
 
-const filePath = process.platform === "linux" ? "/dev/stdin" : "src/index.txt";
+const filePath =
+  process.platform === "linux" ? "/dev/stdin" : "../../../../index.txt";
 const inputData = fs
   .readFileSync(filePath)
   .toString()
