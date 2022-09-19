@@ -43,7 +43,5 @@ function solution(arr, divisor) {
     answer.push(-1);
   }
 
-  console.log(answer);
-
   return answer;
 }
