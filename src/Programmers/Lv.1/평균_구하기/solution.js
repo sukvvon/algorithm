@@ -14,6 +14,7 @@ arr	return
 [5,5]	5
 */
 
+// 1
 function solution(arr) {
   let answer = 0;
 
@@ -22,4 +23,9 @@ function solution(arr) {
   }
   answer /= arr.length;
   return answer;
+}
+
+// 2
+function solution(arr) {
+  return arr.reduce((acc, cur) => acc + cur, 0) / arr.length;
 }
