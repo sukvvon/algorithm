@@ -12,15 +12,37 @@ n	return
 12345	[5,4,3,2,1]
 */
 
+// 1
+// use for loop
 function solution(n) {
   let answer = [];
-  const inputs = n
-    .toString()
-    .split("")
-    .map((value) => +value);
 
-  for (let i = inputs.length - 1; i >= 0; i--) {
-    answer.push(inputs[i]);
+  for (let i = (n + "").length - 1; i >= 0; i--) {
+    answer.push(+(n + "")[i]);
   }
+
   return answer;
+}
+
+// 2
+// use split()
+function solution(n) {
+  return (n + "")
+    .split("")
+    .reverse()
+    .map((value) => +value);
+}
+
+// 3
+// use Spread syntax
+function solution(n) {
+  return [...(n + "")].reverse().map((value) => +value);
+}
+
+// 4
+// use Array.from
+function solution(n) {
+  return Array.from(n + "")
+    .reverse()
+    .map((value) => +value);
 }
