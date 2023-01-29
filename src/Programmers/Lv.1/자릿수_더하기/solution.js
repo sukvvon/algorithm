@@ -21,6 +21,7 @@ N	answer
 9 + 8 + 7 = 24이므로 24를 return 하면 됩니다.
 */
 
+// 1
 function solution(n) {
   let answer = 0;
 
@@ -34,4 +35,9 @@ function solution(n) {
   }
 
   return answer;
+}
+
+// 2
+function solution(n) {
+  return (n + "").split("").reduce((acc, cur) => acc + parseInt(cur), 0);
 }
