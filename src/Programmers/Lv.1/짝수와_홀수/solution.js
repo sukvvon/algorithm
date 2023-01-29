@@ -14,6 +14,7 @@ num	return
 4	"Even"
 */
 
+// 1
 function solution(num) {
   let answer = "";
 
@@ -23,4 +24,9 @@ function solution(num) {
     answer += "Odd";
   }
   return answer;
+}
+
+// 2
+function solution(num) {
+  return num % 2 ? "Odd" : "Even";
 }
