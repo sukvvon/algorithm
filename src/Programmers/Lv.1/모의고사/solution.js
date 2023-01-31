@@ -33,6 +33,8 @@ answers	return
 모든 사람이 2문제씩을 맞췄습니다.
 */
 
+// 1
+// use Array.forEach(), for loop
 function solution(answers) {
   const answer = [];
   const scores = [0, 0, 0];
@@ -57,6 +59,36 @@ function solution(answers) {
       answer.push(i + 1);
     }
   }
+
+  return answer;
+}
+
+// 2
+// use Array.forEach()
+function solution(answers) {
+  const answer = [];
+  const scores = [0, 0, 0];
+  const patterns = [
+    [1, 2, 3, 4, 5],
+    [2, 1, 2, 3, 2, 4, 2, 5],
+    [3, 3, 1, 1, 2, 2, 4, 4, 5, 5],
+  ];
+
+  answers.forEach((answer, index) => {
+    for (let i = 0; i < patterns.length; i++) {
+      if (answer === patterns[i][index % patterns[i].length]) {
+        scores[i]++;
+      }
+    }
+  });
+
+  const maxScore = Math.max(...scores);
+
+  scores.forEach((score, index) => {
+    if (score === maxScore) {
+      answer.push(index + 1);
+    }
+  });
 
   return answer;
 }
