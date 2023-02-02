@@ -22,14 +22,5 @@ n	return
 */
 
 function solution(n) {
-  let answer = 0;
-
-  const sqrt = Math.sqrt(n);
-  if (Number.isInteger(sqrt)) {
-    answer = (sqrt + 1) ** 2;
-  } else {
-    answer = -1;
-  }
-
-  return answer;
+  return Number.isInteger(Math.sqrt(n)) ? (Math.sqrt(n) + 1) ** 2 : -1;
 }
