@@ -28,16 +28,16 @@ arr	return
 13의 모든 자릿수의 합은 4입니다. 13은 4로 나누어 떨어지지 않으므로 13은 하샤드 수가 아닙니다.
  */
 
+// 1
+// use Array.reduce()
 function solution(x) {
-  let answer = true;
+  return x % [...(x + "")].reduce((acc, cur) => acc + +cur, 0) === 0
+    ? true
+    : false;
+}
 
-  const inputs = x
-    .toString()
-    .split("")
-    .map((value) => +value);
-  const sum = inputs.reduce((pre, cur) => pre + cur);
-
-  answer = x % sum === 0 ? true : false;
-
-  return answer;
+// 2
+// use eval
+function solution(x) {
+  return x % eval([...(x + "")].join("+")) === 0 ? true : false;
 }
