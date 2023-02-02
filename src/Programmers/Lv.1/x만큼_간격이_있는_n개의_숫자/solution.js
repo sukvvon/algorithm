@@ -15,6 +15,8 @@ x	n	answer
 -4	2	[-4, -8]
 */
 
+// 1
+// use for loop
 function solution(x, n) {
   let answer = [];
 
@@ -23,4 +25,18 @@ function solution(x, n) {
   }
 
   return answer;
+}
+
+// 2
+// use Array(), Array.fill(), Array.map()
+function solution(x, n) {
+  return Array(n)
+    .fill(x)
+    .map((value, index) => value * (index + 1));
+}
+
+// 3
+// use Array(), Array.keys()
+function solution(x, n) {
+  return [...Array(n).keys()].map((value) => (value + 1) * x);
 }
