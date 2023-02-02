@@ -13,15 +13,5 @@ n	return
 */
 
 function solution(n) {
-  let answer = 0;
-
-  const inputs = n
-    .toString()
-    .split("")
-    .map((value) => +value);
-  const sortedInputs = inputs.sort((a, b) => b - a);
-
-  answer = +sortedInputs.join("");
-
-  return answer;
+  return +[...(n + "")].sort((a, b) => b - a).join("");
 }
