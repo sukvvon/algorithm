@@ -26,13 +26,12 @@ s	answer
 */
 
 function solution(s) {
-  let answer = true;
+  return (
+    [...s.toUpperCase()].filter((value) => value === "Y").length ===
+    [...s.toUpperCase()].filter((value) => value === "P").length
+  );
+}
 
-  const inputs = s.split("").map((value) => value.toLowerCase());
-  const inputsP = inputs.filter((value) => value === "p");
-  const inputsY = inputs.filter((value) => value === "y");
-
-  answer = inputsP.length === inputsY.length ? true : false;
-
-  return answer;
+function solution(s) {
+  return (s.match(/p/gi) || []).length === (s.match(/y/gi) || []).length;
 }
