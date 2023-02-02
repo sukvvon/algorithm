@@ -16,9 +16,5 @@ str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력�
 */
 
 function solution(s) {
-  let answer = 0;
-
-  answer = +s;
-
-  return answer;
+  return +s;
 }
