@@ -58,6 +58,7 @@ s	result
 (3, 2, 4, 1)을 집합 기호를 이용해 표현하면 {{3},{3,2},{3,2,4},{3,2,4,1}}이 되며, 이는 {{4,2,3},{3},{2,3,4,1},{2,3}}과 같습니다.
 */
 
+// 1
 function solution(s) {
   const answer = [];
   s = [...s];
@@ -82,4 +83,17 @@ function solution(s) {
   }
 
   return answer;
+}
+
+// 2
+function solution(s) {
+  return JSON.parse(s.replace(/\{/g, "[").replace(/\}/g, "]"))
+    .sort((a, b) => a.length - b.length)
+    .reduce(
+      (acc, cur) => [
+        ...acc,
+        ...cur.filter((value) => acc.indexOf(value) === -1),
+      ],
+      []
+    );
 }
