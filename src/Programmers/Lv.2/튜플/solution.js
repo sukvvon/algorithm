@@ -97,3 +97,15 @@ function solution(s) {
       []
     );
 }
+
+// 3
+function solution(s) {
+  return JSON.parse(
+    s.replace(/[\{\}]/g, (match) => (match === "{" ? "[" : "]"))
+  )
+    .sort((a, b) => a.length - b.length)
+    .reduce(
+      (acc, cur) => [...acc, ...cur.filter((value) => !acc.includes(value))],
+      []
+    );
+}
