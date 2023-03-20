@@ -38,7 +38,7 @@
 
 const fs = require("fs");
 
-const input = fs
+const [n, ...input] = fs
   .readFileSync(
     process.platform === "linux" ? "/dev/stdin" : "../../../index.txt"
   )
@@ -46,13 +46,40 @@ const input = fs
   .trim()
   .split("\n");
 
-input.shift();
+// 1
+function solution(input) {
+  input.sort((a, b) => {
+    const [ax, ay] = a.split(" ").map((v) => +v);
+    const [bx, by] = b.split(" ").map((v) => +v);
 
-input.sort((a, b) => {
-  const [ax, ay] = a.split(" ").map((v) => +v);
-  const [bx, by] = b.split(" ").map((v) => +v);
+    return ax < bx ? -1 : ax > bx ? 1 : ay < by ? -1 : ay > by ? 1 : 0;
+  });
 
-  return ax < bx ? -1 : ax > bx ? 1 : ay < by ? -1 : ay > by ? 1 : 0;
-});
+  return input.join("\n");
+}
 
-console.log(input.join("\n"));
+// 2
+function solution(input) {
+  input.sort((a, b) => {
+    const [ax, ay] = a.split(" ").map((v) => +v);
+    const [bx, by] = b.split(" ").map((v) => +v);
+
+    return ax === bx ? ay - by : ax - bx;
+  });
+
+  return input.join("\n");
+}
+
+// 3
+function solution(input) {
+  input.sort((a, b) => {
+    const [ax, ay] = a.split(" ").map((v) => +v);
+    const [bx, by] = b.split(" ").map((v) => +v);
+
+    return ax - bx || ay - by;
+  });
+
+  return input.join("\n");
+}
+
+console.log(solution(input));
