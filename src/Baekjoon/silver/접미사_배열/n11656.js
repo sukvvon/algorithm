@@ -47,6 +47,8 @@ const s = fs
   .toString()
   .trim();
 
+// 1
+// Queue
 function solution([...s]) {
   const arr = [];
   const len = s.length;
@@ -56,7 +58,20 @@ function solution([...s]) {
     s.shift();
   }
 
-  return arr.sort((a, b) => (a < b ? -1 : 1)).join("\n");
+  return arr.sort((a, b) => (a <= b ? -1 : 1)).join("\n");
+}
+
+// 2
+function solution(s) {
+  const arr = [];
+  const len = s.length;
+
+  for (let i = 0; i < len; i++) {
+    arr.push(s);
+    s = s.substring(1);
+  }
+
+  return arr.sort().join("\n");
 }
 
 console.log(solution(s));
