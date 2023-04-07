@@ -42,6 +42,7 @@ const n = +fs.readFileSync(
   process.platform === "linux" ? "/dev/stdin" : "../../../index.txt"
 );
 
+// 1
 function solution(n) {
   const memo = new Array(n + 1).fill(null).map(() => new Array(10).fill(0));
   memo[1] = [0n, 1n, 1n, 1n, 1n, 1n, 1n, 1n, 1n, 1n];
@@ -67,6 +68,33 @@ function solution(n) {
     .reduce((acc, cur) => acc + cur, 0n)
     .toString()
     .slice(-9);
+}
+
+// 2
+function solution(n) {
+  const mod = 1000000000;
+
+  const memo = new Array(n + 1).fill(null).map(() => new Array(10).fill(0));
+  memo[1] = [0, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+  memo[2] = [1, 1, 2, 2, 2, 2, 2, 2, 2, 1];
+
+  for (let i = 3; i <= n; i++) {
+    for (let j = 0; j < 10; j++) {
+      if (!j) {
+        memo[i][j] = memo[i - 1][j + 1] % mod;
+        continue;
+      }
+
+      if (j === 9) {
+        memo[i][j] = memo[i - 1][j - 1] % mod;
+        continue;
+      }
+
+      memo[i][j] = (memo[i - 1][j - 1] + memo[i - 1][j + 1]) % mod;
+    }
+  }
+
+  return memo[n].reduce((acc, cur) => acc + cur, 0) % mod;
 }
 
 console.log(solution(n));
