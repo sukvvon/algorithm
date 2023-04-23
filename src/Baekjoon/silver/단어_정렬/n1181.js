@@ -56,7 +56,7 @@ hesitate
 
 const fs = require("fs");
 
-const input = fs
+const [n, ...input] = fs
   .readFileSync(
     process.platform === "linux" ? "/dev/stdin" : "../../../index.txt"
   )
@@ -64,19 +64,73 @@ const input = fs
   .trim()
   .split("\n");
 
-input.shift();
-const filteredInput = [...new Set(input)];
+// 1
+function solution(input) {
+  input = [...new Set(input)].sort((a, b) =>
+    a.length > b.length
+      ? 1
+      : a.length < b.length
+      ? -1
+      : a > b
+      ? 1
+      : a < b
+      ? -1
+      : 0
+  );
 
-filteredInput.sort((a, b) =>
-  a.length > b.length
-    ? 1
-    : a.length < b.length
-    ? -1
-    : a > b
-    ? 1
-    : a < b
-    ? -1
-    : 0
-);
+  return input.join("\n");
+}
 
-console.log(filteredInput.join("\n"));
+// 2-1
+function solution(input) {
+  input = [...new Set(input)].sort((a, b) =>
+    a.length !== b.length ? a.length - b.length : a > b ? 1 : a < b ? -1 : 0
+  );
+
+  return input.join("\n");
+}
+
+// 2-2
+function solution(input) {
+  input = [...new Set(input)].sort((a, b) => {
+    if (a.length !== b.length) {
+      return a.length - b.length;
+    } else {
+      if (a > b) {
+        return 1;
+      } else if (a < b) {
+        return -1;
+      }
+    }
+  });
+
+  return input.join("\n");
+}
+
+// 3-1
+function solution(input) {
+  input = [...new Set(input)].sort((a, b) => {
+    if (a.length === b.length) {
+      if (a > b) {
+        return 1;
+      } else if (a < b) {
+        return -1;
+      }
+    } else {
+      return a.length - b.length;
+    }
+  });
+
+  return input.join("\n");
+}
+
+// 3-2
+function solution(input) {
+  input = [...new Set(input)].sort((a, b) =>
+    a.length === b.length ? (a > b ? 1 : a < b ? -1 : 0) : a.length - b.length
+  );
+
+  return input.join("\n");
+}
+
+console.log(solution(input));
