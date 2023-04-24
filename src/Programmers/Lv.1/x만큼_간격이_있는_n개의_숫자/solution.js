@@ -40,3 +40,9 @@ function solution(x, n) {
 function solution(x, n) {
   return [...Array(n).keys()].map((value) => (value + 1) * x);
 }
+
+//4
+// use Array.from()
+function solution(x, n) {
+  return Array.from({ length: n }, (v, i) => (i + 1) * x);
+}
