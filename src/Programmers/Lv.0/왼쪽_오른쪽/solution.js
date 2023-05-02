@@ -30,11 +30,7 @@ function solution(str_list) {
     return [];
   } else {
     if (idxR < 0) {
-      if (!idxL) {
-        return [];
-      } else {
-        return str_list.slice(0, idxL);
-      }
+      return str_list.slice(0, idxL);
     } else if (idxR > -1 && idxL > -1) {
       if (idxL < idxR) {
         return str_list.slice(0, idxL);
