@@ -32,6 +32,36 @@ tickets	return
 힌트가 필요한가요? [코딩테스트 연습 힌트 모음집]으로 오세요! → 클릭
 */
 
+// 1
+// DFS, stack
+function solution(tickets) {
+  const answer = [];
+  const graph = {};
+  const stack = ["ICN"];
+
+  tickets.forEach(([src, dest]) => {
+    graph[src] = [...(graph[src] || []), dest];
+  });
+
+  for (const key in graph) {
+    graph[key].sort((a, b) => (a < b ? 1 : -1));
+  }
+
+  while (stack.length) {
+    const src = stack.at(-1);
+
+    if (graph[src] && graph[src].length) {
+      stack.push(graph[src].pop());
+    } else {
+      answer.push(stack.pop());
+    }
+  }
+
+  return answer.reverse();
+}
+
+// 2
+// DFS, Recursive Function
 function solution(tickets) {
   const answer = [];
   const plan = ["ICN"];
