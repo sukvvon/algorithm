@@ -19,6 +19,8 @@ number	k	return
 "4177252841"	4	"775841"
 */
 
+// 1
+// stack
 function solution(number, k) {
   const answer = [];
   let cnt = 0;
@@ -38,4 +40,27 @@ function solution(number, k) {
   }
 
   return answer.join("");
+}
+
+// 2
+// stack
+function solution(number, k) {
+  const stack = [];
+  let cnt = 0;
+
+  for (const item of number) {
+    while (stack.at(-1) < tar && cnt < k) {
+      stack.pop();
+      cnt++;
+    }
+
+    stack.push(item);
+  }
+
+  while (cnt < k) {
+    stack.pop();
+    cnt++;
+  }
+
+  return stack.join("");
 }
